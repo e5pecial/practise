@@ -36,7 +36,7 @@ def get_mentions_about(person_rus)
             access_token="",
             access_token_secret=""
          )
-        file = open('bar_0709_data.json' , 'a')
+        file = open(str(person_rus) + 'mention.json' , 'a')
         for tweet in ts.search_tweets_iterable(tso):
             print( '@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text'] ) )
             json_str = json.dumps(tweet, indent = 4, sort_keys = True)
